@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @step.description %>
+</p>
+
+<p>
+  <strong>Step:</strong>
+  <%= @step.how2.name %>
+</p>
+
+<%= link_to 'Edit', edit_how2_step_path(@step.how2, @step) %> |
+<%= link_to 'Show All Steps', how2_steps_path(@step.how2, @step) %> |

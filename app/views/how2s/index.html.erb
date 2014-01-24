@@ -1,0 +1,29 @@
+<h1>How to do teh stuffs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @how2s.each do |how2| %>
+      <tr>
+        <td><%= how2.name %></td>
+        <td><%= how2.description %></td>
+        <td><%= link_to 'Show', how2 %></td>
+        <td><%= link_to 'Edit', edit_how2_path(how2) %></td>
+        <td><%= link_to 'Destroy', how2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New How2', new_how2_path %>

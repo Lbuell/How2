@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @how2.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @how2.description %>
+</p>
+
+<table>
+  <strong>Steps:</strong>
+  <tbody>
+    <% @steps.each do |step| %>
+      <tr>
+        <td><%= step.description %></td>
+        <td><%= step.how2.name %></td>
+        <td><%= link_to 'Show', how2_step_path(step.how2, step) %></td>
+        <td><%= link_to 'Edit', edit_how2_step_path(step.how2, step) %></td>
+        <td><%= link_to 'Finished!', [step.how2, step], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+   </tbody>
+  </table>
+
+
+<%= link_to 'Edit List', edit_how2_path(@how2) %> |
+<%= link_to 'Back', how2s_path %> |
+<%= link_to 'Add Steps', new_how2_step_path(@how2) %>
